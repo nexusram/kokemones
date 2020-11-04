@@ -43,4 +43,11 @@ typedef struct{
     struct pokedex * der;
 } pokedex;
 
+void cargarArchivoEquipo(pokemonEnEquipo *);
+pokemonEnEquipo * inicListaEquipo();
+pokemonEnEquipo * crearNodoEquipo(stats);
+pokemonEnEquipo * leerArchivoEquipo(pokemonEnEquipo *);
+pokemonEnEquipo * agregarPpioEquipo(pokemonEnEquipo *, pokemonEnEquipo *);
+
+
 #endif // KOKEMONES_H_INCLUDED

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1604515954 source:c:\users\emanu\desktop\proyecto final\kokemones\main.c
+	<stdio.h>
+	<stdlib.h>
+
