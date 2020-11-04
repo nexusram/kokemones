@@ -3,6 +3,9 @@
 
 //estructuras pokemones
 typedef struct{
+    int nro;
+    char nombre[30];
+    char tipo[15];
     int nivel;
     char ataque[20][4];
     int hp;
