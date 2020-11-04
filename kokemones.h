@@ -16,7 +16,6 @@ typedef struct{
 
 typedef struct{
     stats estadisticas;
-    pokemon dato;
     struct pokemonEnEquipo * sig;
 } pokemonEnEquipo;
 
