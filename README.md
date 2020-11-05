@@ -26,3 +26,13 @@ Se crearon las siguientes funciones en kokemones.c:
 - pokemonEnEquipo * leerArchivoEquipo(pokemonEnEquipo *);
 - pokemonEnEquipo * agregarPpioEquipo(pokemonEnEquipo *, pokemonEnEquipo *);
 
+# 5/11
+
+Se crearon los siguientes archivos:
+- pokedex.c
+- mochila.c
+
+Se crearon las siguientes librerías:
+- pokedex.h
+- mochila.h
+
