@@ -7,7 +7,19 @@ Integrantes:
 
 # Work Daily
 
-# 4/11
+# 27/10 
+
+Formación del equipo de trabajo;
+
+# 28/10
+
+Elección de la temática a desarrollar;
+
+# 03/11
+
+Reunión de grupo por zoom, elección de estructuras, distribución de tareas;
+
+# 04/11
 
 Se crearon las siguientes estructuras:
 - pokemon
@@ -26,7 +38,7 @@ Se crearon las siguientes funciones en kokemones.c:
 - pokemonEnEquipo * leerArchivoEquipo(pokemonEnEquipo *);
 - pokemonEnEquipo * agregarPpioEquipo(pokemonEnEquipo *, pokemonEnEquipo *);
 
-# 5/11
+# 05/11
 
 Se crearon los siguientes archivos:
 - pokedex.c
@@ -36,7 +48,7 @@ Se crearon las siguientes librerías:
 - pokedex.h
 - mochila.h
 
-# 6/11
+# 06/11
 
 - Se actualizó la estructura stats por ser muy engorrosa para el usuario ingresar tantos datos.
 
