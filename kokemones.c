@@ -1,4 +1,5 @@
 #include "kokemones.h"
+#include "pokedex.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -57,4 +58,65 @@ pokemonEnEquipo * leerArchivoEquipo(pokemonEnEquipo * lista){
     }
 
     return lista;
+}
+
+pokemonEnEquipo * cargarEquipo(pokemonEnEquipo * equipo){
+
+    char control = 's';
+    int enPokedex = 0;
+    pokemonEnEquipo * nuevo;
+    stats dato;
+
+    while(control == 's'){
+
+        dato = cargarPokemon();
+        nuevo = crearNodoEquipo(dato);
+
+        enPokedex = buscarEnPokedex(nuevo->estadisticas);
+
+        if(enPokedex == -1){
+            agregarDeEquipoAPokedex(dato);
+        }
+
+        equipo = agregarPpioEquipo(equipo,nuevo);
+
+        printf("\nDesea ingresar otro pokemon?\n");
+        fflush(stdin);
+        scanf("%c",&control);
+    }
+
+    printf("\nDeseas guardar este equipo en el archivo? (s/n)");
+    printf("\nSe borrara el equipo que tenias guardado antes\n");
+    fflush(stdin);
+    scanf("%c"&control);
+
+    if(control == 's'){
+        cargarArchivoEquipo(equipo);
+    }
+
+    return equipo;
+}
+
+stats cargarPokemon(){
+    stats nuevoPokemon;
+
+    printf("\nIngrese el nivel de su pokemon\n");
+    scanf("%d",&nuevoPokemon.nivel);
+
+    printf("\nIngrese el numero de su pokemon\n");
+    scanf("%d",&nuevoPokemon.nro);
+
+    printf("\nIngrese el tipo de su pokemon\n");
+    fflush(stdin);
+    scanf("%s",&nuevoPokemon.tipo);
+
+    printf("\nIngrese el nombre de su pokemon\n");
+    fflush(stdin);
+    scanf("%s",&nuevoPokemon.nombre);
+
+    for(int i = 0; i < 4; i++){
+        printf("\nIngrese el ataque nro %d\n",i+1);
+        fflush(stdin);
+        scanf("%s",&nuevoPokemon.ataques[i]);
+    }
 }
