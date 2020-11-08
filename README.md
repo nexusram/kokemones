@@ -29,7 +29,7 @@ Se crearon las siguientes estructuras:
 - pokemonEnEquipo
 - stats
 
-- Se creó la librería pokemonEnEquipo.
+Se creó la librería pokemonEnEquipo.
 
 Se crearon las siguientes funciones en kokemones.c:
 - void cargarArchivoEquipo(pokemonEnEquipo *);
