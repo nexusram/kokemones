@@ -72,10 +72,10 @@ pokemonEnEquipo * cargarEquipo(pokemonEnEquipo * equipo){
         dato = cargarPokemon();
         nuevo = crearNodoEquipo(dato);
 
-        enPokedex = buscarEnPokedex(nuevo->estadisticas);
+//        enPokedex = buscarEnPokedex(nuevo->estadisticas);
 
         if(enPokedex == -1){
-            agregarDeEquipoAPokedex(dato);
+//            agregarDeEquipoAPokedex(dato);
         }
 
         equipo = agregarPpioEquipo(equipo,nuevo);
@@ -88,7 +88,7 @@ pokemonEnEquipo * cargarEquipo(pokemonEnEquipo * equipo){
     printf("\nDeseas guardar este equipo en el archivo? (s/n)");
     printf("\nSe borrara el equipo que tenias guardado antes\n");
     fflush(stdin);
-    scanf("%c"&control);
+    scanf("%c",&control);
 
     if(control == 's'){
         cargarArchivoEquipo(equipo);
@@ -99,6 +99,7 @@ pokemonEnEquipo * cargarEquipo(pokemonEnEquipo * equipo){
 
 stats cargarPokemon(){
     stats nuevoPokemon;
+    char control = 's';
 
     printf("\nIngrese el nivel de su pokemon\n");
     scanf("%d",&nuevoPokemon.nivel);
@@ -114,9 +115,38 @@ stats cargarPokemon(){
     fflush(stdin);
     scanf("%s",&nuevoPokemon.nombre);
 
-    for(int i = 0; i < 4; i++){
+    printf("\nIngrese la cantidad de ataques de su pokemon\n");
+    scanf("%d",&nuevoPokemon.cantAtaques);
+
+    for(int i = 0; i < nuevoPokemon.cantAtaques; i++){
         printf("\nIngrese el ataque nro %d\n",i+1);
         fflush(stdin);
         scanf("%s",&nuevoPokemon.ataques[i]);
+    }
+
+    return nuevoPokemon;
+}
+
+void mostrarEquipo(pokemonEnEquipo * lista){
+    pokemonEnEquipo * aux;
+    int i = 1;
+
+    while(aux!=NULL){
+        printf("\n------->Mostrando al pokemon numero %d de tu equipo<-------\n\n", i);
+        mostrarPokemon(aux->estadisticas);
+        aux = aux->sig;
+        i++;
+    }
+}
+
+void mostrarPokemon(stats estadisticas){
+    printf("Nombre: %s\n",estadisticas.nombre);
+    printf("Nro: %d\n",estadisticas.nro);
+    printf("Cantidad de ataques: %d\n",estadisticas.cantAtaques);
+    printf("Nivel: %d\n",estadisticas.nivel);
+    printf("Tipo: %s\n",estadisticas.tipo);
+    printf("Ataques: \n")
+    for(int i = 0; i < estadisticas.cantAtaques; i++){
+        printf("- %s\n",estadisticas.ataques[i]);
     }
 }

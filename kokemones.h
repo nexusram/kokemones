@@ -8,6 +8,7 @@ typedef struct{
     char tipo[15];
     int nivel;
     char ataques[4][20];
+    int cantAtaques;
 } stats;
 
 typedef struct{
@@ -45,6 +46,6 @@ pokemonEnEquipo * crearNodoEquipo(stats);
 pokemonEnEquipo * leerArchivoEquipo(pokemonEnEquipo *);
 pokemonEnEquipo * agregarPpioEquipo(pokemonEnEquipo *, pokemonEnEquipo *);
 pokemonEnEquipo * cargarEquipo(pokemonEnEquipo *);
-
+stats cargarPokemon();
 
 #endif // KOKEMONES_H_INCLUDED
