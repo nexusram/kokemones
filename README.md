@@ -61,3 +61,24 @@ Dentro de la funcion cargarEquipo() se llamaron a varias funciones sin definir q
 
 - int buscarEnPokedex(stats): recibe los stats de un determinado pokemon, lo busca en la pokedex y retorna -1 si no lo encuentra
 - void agregarDeEquipoAPokedex(stats): recibe los stats de un determinado pokemon y lo agrega al arbol
+
+# 07/11
+
+Se crearon las siguientes funciones:
+
+- stats cargarPokemon();
+- void mostrarEquipo(pokemonEnEquipo *);
+- void mostrarPokemon(stats);
+
+
+
+
+
+
+
+
+
+
+
+
+
