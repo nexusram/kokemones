@@ -31,9 +31,21 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="kokemones.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kokemones.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="mochila.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mochila.h" />
+		<Unit filename="pokedex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="pokedex.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

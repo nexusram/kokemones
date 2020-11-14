@@ -40,6 +40,8 @@ typedef struct{
     struct pokedex * der;
 } pokedex;
 
+void mostrarEquipo(pokemonEnEquipo *);
+void mostrarPokemon(stats);
 void cargarArchivoEquipo(pokemonEnEquipo *);
 pokemonEnEquipo * inicListaEquipo();
 pokemonEnEquipo * crearNodoEquipo(stats);
