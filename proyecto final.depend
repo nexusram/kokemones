@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1605305638 source:c:\users\emanu\desktop\proyecto final\kokemones\main.c
+1605475580 source:c:\users\emanu\desktop\proyecto final\kokemones\main.c
 	<stdio.h>
 	<stdlib.h>
 	"kokemones.h"
@@ -19,9 +19,16 @@
 	<stdio.h>
 	<string.h>
 
-1605473629 c:\users\emanu\desktop\proyecto final\kokemones\pokedex.h
+1605476219 c:\users\emanu\desktop\proyecto final\kokemones\pokedex.h
 
-1605471308 c:\users\emanu\desktop\proyecto final\kokemones\kokemones.h
+1605476025 c:\users\emanu\desktop\proyecto final\kokemones\kokemones.h
 	"pokedex.h"
 	"mochila.h"
+
+1605476135 source:c:\users\emanu\desktop\proyecto final\kokemones\kokemones.c
+	"kokemones.h"
+	"pokedex.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
 

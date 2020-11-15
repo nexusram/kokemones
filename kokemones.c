@@ -186,7 +186,12 @@ pokemonEnEquipo * modificarPokemon(pokemonEnEquipo * lista, char aModificar[20],
 
         aux = modificarStat(aux);
 
-        arbolPokedex = modificarPokemonEnPokedex(aux->estadisticas, arbolPokedex);
+        pokemon amodificarPokemon;
+        amodificarPokemon.nro = aux->estadisticas.nro;
+        strcpy(amodificarPokemon.nombre,aux->estadisticas.nombre);
+        strcpy(amodificarPokemon.tipo,aux->estadisticas.tipo);
+
+        arbolPokedex = modificarPokemonEnPokedex(amodificarPokemon, arbolPokedex);
 
     }else{
         printf("El pokemon no se encuentra en tu equipo :( \n");

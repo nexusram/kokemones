@@ -19,5 +19,9 @@ pokedex * insertarNodoPokedex(pokedex *, pokemon);
 pokedex * inicPokedex();
 pokedex * crearNodoPokedex();
 int buscarEnPokedex(pokemon, pokedex *);
+pokedex * leerPokedex(pokedex * );
+void cargarArchivoPokedex(pokedex * );
+int leerYpasarAArreglo(pokedex * , pokemon *, int );
+
 
 #endif // POKEDEX_H_INCLUDED

@@ -28,4 +28,9 @@ pokemonEnEquipo * agregarPpioEquipo(pokemonEnEquipo *, pokemonEnEquipo *);
 pokemonEnEquipo * cargarEquipo(pokemonEnEquipo *, pokedex *);
 stats cargarPokemon();
 
+pokemonEnEquipo * modificarPokemon(pokemonEnEquipo * , char *, pokedex * );
+pokemonEnEquipo * modificarPokemon(pokemonEnEquipo * , char *, pokedex * );
+pokemonEnEquipo * modificarStat(pokemonEnEquipo * );
+pokemonEnEquipo * borrarPokemon(char *, pokemonEnEquipo * );
+
 #endif // KOKEMONES_H_INCLUDED

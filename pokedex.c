@@ -7,13 +7,13 @@
 pokedex * insertarNodoPokedex(pokedex * arbolPokedex, pokemon dato){
 
     if(arbolPokedex==NULL){
-        arbolPokedex = crearNodoArbol(dato);
+        arbolPokedex = crearNodoPokedex(dato);
     }else{
         if(dato.nro > arbolPokedex->dato.nro){
-            arbolPokedex->der = insertar(arbolPokedex->der, dato);
+            arbolPokedex->der = insertarNodoPokedex(arbolPokedex->der, dato);
         }
         else{
-            arbolPokedex->izq = insertar(arbolPokedex->izq, dato);
+            arbolPokedex->izq = insertarNodoPokedex(arbolPokedex->izq, dato);
         }
     }
 
@@ -78,13 +78,13 @@ pokedex * leerPokedex(pokedex * arbolPokedex){
     return arbolPokedex;
 }
 
-void cargarArchivoEquipo(pokedex * arbolPokedex){
+void cargarArchivoPokedex(pokedex * arbolPokedex){
     FILE * parch = fopen(ARCHIVO_POKEDEX,"wb");
     pokemon dato[500];
     int validos = 0, i = 0;
 
     if(parch != NULL){
-        validos = leerYpasarAArreglo(arbolPokedex,dato);
+        validos = leerYpasarAArreglo(arbolPokedex,dato,0);
         while(i < validos){
             fwrite(&dato[i],sizeof(pokemon),1,parch);
             i++;
@@ -94,15 +94,29 @@ void cargarArchivoEquipo(pokedex * arbolPokedex){
     fclose(parch);
 }
 
-int leerYpasarAArreglo(pokedex * arbolPokedex, pokemon arreglo[500]){
+int leerYpasarAArreglo(pokedex * arbolPokedex, pokemon arreglo[500], int validos){
     int i = 0;
 
     if(arbolPokedex!=NULL){
         arreglo[i] = arbolPokedex->dato;
         i++;
-        i = i + leerYpasarAArreglo(arbolPokedex->der);
-        i = i + leerYpasarAArreglo(arbolPokedex->izq);
+        i = i + leerYpasarAArreglo(arbolPokedex->der,arreglo,validos);
+        i = i + leerYpasarAArreglo(arbolPokedex->izq,arreglo,validos);
     }
 
     return i;
+}
+
+void mostrarPokedex(pokedex * arbolPokedex){
+    if(arbolPokedex!=NULL){
+        mostrarPokedex(arbolPokedex->izq);
+        mostrarPokemonEnPokedex(arbolPokedex->dato);
+        mostrarPokedex(arbolPokedex->der);
+    }
+}
+
+void mostrarPokemonEnPokedex(pokemon estadisticas){
+    printf("Nombre: %s\n",estadisticas.nombre);
+    printf("Nro: %d\n",estadisticas.nro);
+    printf("Tipo: %s\n\n",estadisticas.tipo);
 }
