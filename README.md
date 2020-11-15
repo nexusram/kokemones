@@ -70,9 +70,27 @@ Se crearon las siguientes funciones:
 - void mostrarEquipo(pokemonEnEquipo *);
 - void mostrarPokemon(stats);
 
+# 15/11
 
+Se modificaron las importaciones entre archivos
 
+Se crearon las siguientes funciones en kokemones.c
 
+- pokemonEnEquipo * modificarPokemon(pokemonEnEquipo * , char *, pokedex * );
+- pokemonEnEquipo * modificarPokemon(pokemonEnEquipo * , char *, pokedex * );
+- pokemonEnEquipo * modificarStat(pokemonEnEquipo * );
+- pokemonEnEquipo * borrarPokemon(char *, pokemonEnEquipo * );
+
+Se crearon las siguientes funciones en pokedex.c
+
+- pokedex * modificarPokemonEnPokedex(pokemon, pokedex *);
+- pokedex * insertarNodoPokedex(pokedex *, pokemon);
+- pokedex * inicPokedex();
+- pokedex * crearNodoPokedex();
+- int buscarEnPokedex(pokemon, pokedex *);
+- pokedex * leerPokedex(pokedex * );
+- void cargarArchivoPokedex(pokedex * );
+- int leerYpasarAArreglo(pokedex * , pokemon *, int );
 
 
 
