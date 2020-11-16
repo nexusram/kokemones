@@ -66,16 +66,20 @@ pokemonEnEquipo * cargarEquipo(pokemonEnEquipo * equipo, pokedex * arbolPokedex)
     int enPokedex = 0;
     pokemonEnEquipo * nuevo;
     stats dato;
-
+    pokemon abuscar;
     while(control == 's'){
 
         dato = cargarPokemon();
         nuevo = crearNodoEquipo(dato);
 
-//        enPokedex = buscarEnPokedex(nuevo->estadisticas);
+        abuscar.nro = dato.nro;
+        strcpy(abuscar.nombre,dato.nombre);
+        strcpy(abuscar.tipo,dato.tipo);
+
+        enPokedex = buscarEnPokedex(abuscar,arbolPokedex);
 
         if(enPokedex == -1){
-//            arbolPokedex = insertarNodoPokedex(arbolPokedex,dato);
+           arbolPokedex = insertarNodoPokedex(arbolPokedex,abuscar);
         }
 
         equipo = agregarPpioEquipo(equipo,nuevo);

@@ -14,7 +14,7 @@ typedef struct{
     struct pokedex * der;
 } pokedex;
 
-pokedex * modificarPokemonEnPokedex(pokemon, pokedex *);
+pokedex * modificarPokemonEnPokedex(pokemon, pokedex * );
 pokedex * insertarNodoPokedex(pokedex *, pokemon);
 pokedex * inicPokedex();
 pokedex * crearNodoPokedex();
@@ -22,6 +22,6 @@ int buscarEnPokedex(pokemon, pokedex *);
 pokedex * leerPokedex(pokedex * );
 void cargarArchivoPokedex(pokedex * );
 int leerYpasarAArreglo(pokedex * , pokemon *, int );
-
+pokemon cargarPokemonPokedex();
 
 #endif // POKEDEX_H_INCLUDED

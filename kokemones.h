@@ -28,8 +28,8 @@ pokemonEnEquipo * agregarPpioEquipo(pokemonEnEquipo *, pokemonEnEquipo *);
 pokemonEnEquipo * cargarEquipo(pokemonEnEquipo *, pokedex *);
 stats cargarPokemon();
 
-pokemonEnEquipo * modificarPokemon(pokemonEnEquipo * , char *, pokedex * );
-pokemonEnEquipo * modificarPokemon(pokemonEnEquipo * , char *, pokedex * );
+pokemonEnEquipo * modificarPokemones(pokemonEnEquipo * lista, pokedex * arbolPokedex);
+pokemonEnEquipo * modificarPokemon(pokemonEnEquipo * lista, char aModificar[20], pokedex * arbolPokedex);
 pokemonEnEquipo * modificarStat(pokemonEnEquipo * );
 pokemonEnEquipo * borrarPokemon(char *, pokemonEnEquipo * );
 

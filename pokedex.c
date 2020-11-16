@@ -120,3 +120,21 @@ void mostrarPokemonEnPokedex(pokemon estadisticas){
     printf("Nro: %d\n",estadisticas.nro);
     printf("Tipo: %s\n\n",estadisticas.tipo);
 }
+
+pokemon cargarPokemonPokedex(){
+    pokemon nuevoPokemon;
+    char control = 's';
+
+    printf("\nIngrese el numero de su pokemon\n");
+    scanf("%d",&nuevoPokemon.nro);
+
+    printf("\nIngrese el tipo de su pokemon\n");
+    fflush(stdin);
+    scanf("%s",&nuevoPokemon.tipo);
+
+    printf("\nIngrese el nombre de su pokemon\n");
+    fflush(stdin);
+    scanf("%s",&nuevoPokemon.nombre);
+
+    return nuevoPokemon;
+}
