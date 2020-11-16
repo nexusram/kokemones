@@ -21,15 +21,16 @@ typedef struct{
 void mostrarEquipo(pokemonEnEquipo *);
 void mostrarPokemon(stats);
 void cargarArchivoEquipo(pokemonEnEquipo *);
+void mostrarPokemonEquipo(char aMostrar[20], pokemonEnEquipo * equipo);
 pokemonEnEquipo * inicListaEquipo();
 pokemonEnEquipo * crearNodoEquipo(stats);
 pokemonEnEquipo * leerArchivoEquipo(pokemonEnEquipo *);
 pokemonEnEquipo * agregarPpioEquipo(pokemonEnEquipo *, pokemonEnEquipo *);
-pokemonEnEquipo * cargarEquipo(pokemonEnEquipo *, pokedex *);
+pokemonEnEquipo * cargarEquipo(pokemonEnEquipo *);
 stats cargarPokemon();
 
-pokemonEnEquipo * modificarPokemones(pokemonEnEquipo * lista, pokedex * arbolPokedex);
-pokemonEnEquipo * modificarPokemon(pokemonEnEquipo * lista, char aModificar[20], pokedex * arbolPokedex);
+pokemonEnEquipo * modificarPokemones(pokemonEnEquipo * lista);
+pokemonEnEquipo * modificarPokemon(pokemonEnEquipo * lista, char aModificar[20]);
 pokemonEnEquipo * modificarStat(pokemonEnEquipo * );
 pokemonEnEquipo * borrarPokemon(char *, pokemonEnEquipo * );
 

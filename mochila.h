@@ -4,6 +4,7 @@
 //estructuras mochila
 typedef struct {
     char nombre[20];
+    char tipo[20];
     struct items * sig;
 } items;
 
@@ -12,4 +13,8 @@ typedef struct{
     items * lista;
 } mochila;
 
+void inicMochila(mochila *);
+items * inciListaItems();
+void cargarMochilaAArchivo(mochila);
+void leerMochila(mochila)
 #endif // MOCHILA_H_INCLUDED

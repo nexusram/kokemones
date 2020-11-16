@@ -60,7 +60,7 @@ pokemonEnEquipo * leerArchivoEquipo(pokemonEnEquipo * lista){
     return lista;
 }
 
-pokemonEnEquipo * cargarEquipo(pokemonEnEquipo * equipo, pokedex * arbolPokedex){
+pokemonEnEquipo * cargarEquipo(pokemonEnEquipo * equipo){
 
     char control = 's';
     int enPokedex = 0;
@@ -76,15 +76,9 @@ pokemonEnEquipo * cargarEquipo(pokemonEnEquipo * equipo, pokedex * arbolPokedex)
         strcpy(abuscar.nombre,dato.nombre);
         strcpy(abuscar.tipo,dato.tipo);
 
-        enPokedex = buscarEnPokedex(abuscar,arbolPokedex);
-
-        if(enPokedex == -1){
-           arbolPokedex = insertarNodoPokedex(arbolPokedex,abuscar);
-        }
-
         equipo = agregarPpioEquipo(equipo,nuevo);
 
-        printf("\nDesea ingresar otro pokemon?\n");
+        printf("\nDesea ingresar otro kokemon?\n");
         fflush(stdin);
         scanf("%c",&control);
     }
@@ -105,21 +99,21 @@ stats cargarPokemon(){
     stats nuevoPokemon;
     char control = 's';
 
-    printf("\nIngrese el nivel de su pokemon\n");
+    printf("\nIngrese el nivel de su kokemon\n");
     scanf("%d",&nuevoPokemon.nivel);
 
-    printf("\nIngrese el numero de su pokemon\n");
+    printf("\nIngrese el numero de su kokemon\n");
     scanf("%d",&nuevoPokemon.nro);
 
-    printf("\nIngrese el tipo de su pokemon\n");
+    printf("\nIngrese el tipo de su kokemon\n");
     fflush(stdin);
     scanf("%s",&nuevoPokemon.tipo);
 
-    printf("\nIngrese el nombre de su pokemon\n");
+    printf("\nIngrese el nombre de su kokemon\n");
     fflush(stdin);
     scanf("%s",&nuevoPokemon.nombre);
 
-    printf("\nIngrese la cantidad de ataques de su pokemon\n");
+    printf("\nIngrese la cantidad de ataques de su kokemon\n");
     scanf("%d",&nuevoPokemon.cantAtaques);
 
     for(int i = 0; i < nuevoPokemon.cantAtaques; i++){
@@ -132,11 +126,11 @@ stats cargarPokemon(){
 }
 
 void mostrarEquipo(pokemonEnEquipo * lista){
-    pokemonEnEquipo * aux;
+    pokemonEnEquipo * aux = lista;
     int i = 1;
 
     while(aux!=NULL){
-        printf("\n------->Mostrando al pokemon numero %d de tu equipo<-------\n\n", i);
+        printf("\n------->Mostrando al kokemon numero %d de tu equipo<-------\n\n", i);
         mostrarPokemon(aux->estadisticas);
         aux = aux->sig;
         i++;
@@ -144,7 +138,7 @@ void mostrarEquipo(pokemonEnEquipo * lista){
 }
 
 void mostrarPokemon(stats estadisticas){
-    printf("Nombre: %s\n",estadisticas.nombre);
+    printf("\nNombre: %s\n",estadisticas.nombre);
     printf("Nro: %d\n",estadisticas.nro);
     printf("Cantidad de ataques: %d\n",estadisticas.cantAtaques);
     printf("Nivel: %d\n",estadisticas.nivel);
@@ -156,27 +150,27 @@ void mostrarPokemon(stats estadisticas){
     }
 }
 
-pokemonEnEquipo * modificarPokemones(pokemonEnEquipo * lista, pokedex * arbolPokedex){
+pokemonEnEquipo * modificarPokemones(pokemonEnEquipo * lista){
     char aModificar[20];
 
-    printf("Estos son los pokemones que tenes en tu equipo\n");
+    printf("\nEstos son los kokemones que tenes en tu equipo\n");
     mostrarEquipo(lista);
 
-    printf("Escribe el nombre del pokemon a modificar\n");
+    printf("\nEscribe el nombre del kokemon a modificar\n");
     fflush(stdin);
     scanf("%s",&aModificar);
 
-    lista = modificarPokemon(lista, aModificar, arbolPokedex);
+    lista = modificarPokemon(lista, aModificar);
 
     return lista;
 }
 
-pokemonEnEquipo * modificarPokemon(pokemonEnEquipo * lista, char aModificar[20], pokedex * arbolPokedex){
+pokemonEnEquipo * modificarPokemon(pokemonEnEquipo * lista, char aModificar[20]){
     pokemonEnEquipo * aux = lista;
     int j = 0, opcion = 0;
 
     if(lista==NULL){
-        printf("No hay pokemones en el equipo\n");
+        printf("\nNo hay kokemones en el equipo\n");
     }else{
         while(aux!=NULL && strcmp(aux->estadisticas.nombre, aModificar) != 0){
             aux = aux->sig;
@@ -184,21 +178,14 @@ pokemonEnEquipo * modificarPokemon(pokemonEnEquipo * lista, char aModificar[20],
     }
 
     if(aux!=NULL){
-        printf("El pokemon fue encontrado exitosamente\n");
+        printf("\nEl kokemon fue encontrado exitosamente\n\n");
 
         mostrarPokemon(aux->estadisticas);
 
         aux = modificarStat(aux);
 
-        pokemon amodificarPokemon;
-        amodificarPokemon.nro = aux->estadisticas.nro;
-        strcpy(amodificarPokemon.nombre,aux->estadisticas.nombre);
-        strcpy(amodificarPokemon.tipo,aux->estadisticas.tipo);
-
-        arbolPokedex = modificarPokemonEnPokedex(amodificarPokemon, arbolPokedex);
-
     }else{
-        printf("El pokemon no se encuentra en tu equipo :( \n");
+        printf("\nEl kokemon no se encuentra en tu equipo :( \n");
     }
 
     return lista;
@@ -208,48 +195,48 @@ pokemonEnEquipo * modificarStat(pokemonEnEquipo * aux){
 
         int opcion = 0,i,j;
 
-        printf("Que queres cambiarle?\n");
-        printf("1. Nombre\n2.Ataques\n3.Tipo\n4.Nivel\n5.Agregar ataque\n");
+        printf("\nQue queres cambiarle?\n\n");
+        printf("1. Nombre\n2. Ataques\n3. Tipo\n4. Nivel\n5. Agregar ataque\n");
 
         scanf("%d",&opcion);
 
         switch(opcion){
         case 1:
-            printf("Ingrese el nuevo nombre\n");
+            printf("\nIngrese el nuevo nombre\n");
             fflush(stdin);
             scanf("%s",&aux->estadisticas.nombre);
             break;
         case 2:
-            printf("Tienes %d ataques, cual queres modificar?\n", aux->estadisticas.cantAtaques);
+            printf("\nTienes %d ataques, cual queres modificar?\n", aux->estadisticas.cantAtaques);
             for(i = 0; i < aux->estadisticas.cantAtaques; i++){
                 printf("%d. %s\n", i+1, aux->estadisticas.ataques[i]);
             }
 
             scanf("%d",&j);
 
-            printf("Ingrese el nuevo ataque\n");
+            printf("\nIngrese el nuevo ataque\n");
             fflush(stdin);
             scanf("%s",&aux->estadisticas.ataques[j-1]);
             break;
         case 3:
-            printf("Ingrese el nuevo tipo\n");
+            printf("\nIngrese el nuevo tipo\n");
             fflush(stdin);
             scanf("%s",&aux->estadisticas.tipo);
             break;
         case 4:
-            printf("Ingrese el nuevo nivel\n");
+            printf("\nIngrese el nuevo nivel\n");
             fflush(stdin);
-            scanf("%s",&aux->estadisticas.nivel);
+            scanf("%d",&aux->estadisticas.nivel);
             break;
         case 5:
             if(aux->estadisticas.cantAtaques < 4){
-                printf("Ingrese el nuevo ataque\n");
+                printf("\nIngrese el nuevo ataque\n");
                 fflush(stdin);
                 scanf("%s",&aux->estadisticas.ataques[aux->estadisticas.cantAtaques-1]);
             }
             break;
         default:
-            printf("Numero ingresado no valido, saliendo de la funcion");
+            printf("\nNumero ingresado no valido, saliendo de la funcion\n");
             break;
         }
     return aux;
@@ -277,4 +264,18 @@ pokemonEnEquipo * borrarPokemon(char nombre[20], pokemonEnEquipo * lista){
     }
 
    return lista;
+}
+
+void mostrarPokemonEquipo(char aMostrar[20], pokemonEnEquipo * equipo){
+    pokemonEnEquipo * aux = equipo;
+
+    while(aux!=NULL && strcmp(aux->estadisticas.nombre, aMostrar) != 0){
+        aux = aux->sig;
+    }
+
+    if(aux!=NULL){
+        mostrarPokemon(aux->estadisticas);
+    }else{
+        printf("kokemon no encontrado\n");
+    }
 }

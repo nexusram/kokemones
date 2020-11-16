@@ -14,11 +14,11 @@ typedef struct{
     struct pokedex * der;
 } pokedex;
 
-pokedex * modificarPokemonEnPokedex(pokemon, pokedex * );
+pokedex * modificarPokemonEnPokedex(char *, pokedex * );
 pokedex * insertarNodoPokedex(pokedex *, pokemon);
 pokedex * inicPokedex();
 pokedex * crearNodoPokedex();
-int buscarEnPokedex(pokemon, pokedex *);
+int buscarEnPokedex(int, pokedex *);
 pokedex * leerPokedex(pokedex * );
 void cargarArchivoPokedex(pokedex * );
 int leerYpasarAArreglo(pokedex * , pokemon *, int );

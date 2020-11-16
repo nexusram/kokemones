@@ -30,33 +30,36 @@ pokedex * crearNodoPokedex(pokemon nuevo){
     auxPokedex->dato = nuevo;
     auxPokedex->der = NULL;
     auxPokedex->izq = NULL;
-
     return auxPokedex;
 }
 
-int buscarEnPokedex(pokemon dato, pokedex * arbolPokedex){
+int buscarEnPokedex(int nro, pokedex * arbolPokedex){
     int encontrado = -1;
 
     if(arbolPokedex != NULL){
-        if(encontrado != 0 && arbolPokedex->dato.nro == dato.nro){
+        if(encontrado != 0 && arbolPokedex->dato.nro == nro){
             encontrado = 0;
+            mostrarPokemonEnPokedex(arbolPokedex->dato);
         }
         if(encontrado == -1){
-            encontrado = buscarEnPokedex(dato,arbolPokedex->der);
-            encontrado = buscarEnPokedex(dato,arbolPokedex->izq);
+            encontrado = buscarEnPokedex(nro,arbolPokedex->der);
+            encontrado = buscarEnPokedex(nro,arbolPokedex->izq);
         }
     }
 
     return encontrado;
 }
 
-pokedex * modificarPokemonEnPokedex(pokemon pokemonAModificar, pokedex * arbolPokedex){
+pokedex * modificarPokemonEnPokedex(char AModificar[20], pokedex * arbolPokedex){
     if(arbolPokedex!=NULL){
-        if(strcmp(pokemonAModificar.nombre,arbolPokedex->dato.nombre) == 0){
-            arbolPokedex->dato = pokemonAModificar;
+        if(strcmp(AModificar,arbolPokedex->dato.nombre) == 0){
+            printf("\nKokemon encontrado con exito\n");
+            printf("Ingrese los nuevos datos\n");
+            pokemon nuevosDatos = cargarPokemonPokedex();
+            arbolPokedex->dato = nuevosDatos;
         }
-        arbolPokedex->izq = modificarPokemonEnPokedex(pokemonAModificar,arbolPokedex->izq);
-        arbolPokedex->der = modificarPokemonEnPokedex(pokemonAModificar,arbolPokedex->der);
+        arbolPokedex->izq = modificarPokemonEnPokedex(AModificar,arbolPokedex->izq);
+        arbolPokedex->der = modificarPokemonEnPokedex(AModificar,arbolPokedex->der);
     }
 
     return arbolPokedex;
@@ -64,8 +67,8 @@ pokedex * modificarPokemonEnPokedex(pokemon pokemonAModificar, pokedex * arbolPo
 
 pokedex * leerPokedex(pokedex * arbolPokedex){
     FILE * parch = fopen(ARCHIVO_POKEDEX,"rb");
+
     pokemon aux;
-    arbolPokedex = inicPokedex();
 
     if(parch!=NULL){
         while(fread(&aux,sizeof(pokemon),1,parch)>0){
@@ -125,14 +128,14 @@ pokemon cargarPokemonPokedex(){
     pokemon nuevoPokemon;
     char control = 's';
 
-    printf("\nIngrese el numero de su pokemon\n");
+    printf("\nIngrese el numero de su kokemon\n");
     scanf("%d",&nuevoPokemon.nro);
 
-    printf("\nIngrese el tipo de su pokemon\n");
+    printf("\nIngrese el tipo de su kokemon\n");
     fflush(stdin);
     scanf("%s",&nuevoPokemon.tipo);
 
-    printf("\nIngrese el nombre de su pokemon\n");
+    printf("\nIngrese el nombre de su kokemon\n");
     fflush(stdin);
     scanf("%s",&nuevoPokemon.nombre);
 
