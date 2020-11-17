@@ -7,7 +7,7 @@
 
 pokemonEnEquipo * menuKokemones(pokemonEnEquipo *);
 pokedex * menuPokedex();
-void menuMochila();
+void menuMochila(mochila *);
 
 int main()
 {

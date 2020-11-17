@@ -8,6 +8,6 @@ void inicMochila(mochila arr[3]){
     }
 }
 
-items * inciListaItems(){
+items * inicListaItems(){
     return NULL;
 }

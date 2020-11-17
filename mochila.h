@@ -14,7 +14,7 @@ typedef struct{
 } mochila;
 
 void inicMochila(mochila *);
-items * inciListaItems();
+items * inicListaItems();
 void cargarMochilaAArchivo(mochila);
-void leerMochila(mochila)
+void leerMochila(mochila);
 #endif // MOCHILA_H_INCLUDED
