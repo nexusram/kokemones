@@ -103,7 +103,7 @@ Se crearon las siguientes funciones en main.c:
 
 Se definieron las siguientes funciones en mochila.h:
 - void inicMochila(mochila *);
-- items * inciListaItems();
+- items * inicListaItems();
 - void cargarMochilaAArchivo(mochila);
 - void leerMochila(mochila);
 
