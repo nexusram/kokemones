@@ -92,6 +92,61 @@ Se crearon las siguientes funciones en pokedex.c
 - void cargarArchivoPokedex(pokedex * );
 - int leerYpasarAArreglo(pokedex * , pokemon *, int );
 
+# 16/11
+
+Se creó el menu principal y los menúes para las 3 estructuras principales
+
+Se crearon las siguientes funciones en main.c:
+- pokemonEnEquipo * menuKokemones(pokemonEnEquipo *);
+- pokedex * menuPokedex();
+- void menuMochila(mochila *);
+
+Se definieron las siguientes funciones en mochila.h:
+- void inicMochila(mochila *);
+- items * inciListaItems();
+- void cargarMochilaAArchivo(mochila);
+- void leerMochila(mochila);
+
+Se modificó la estructura items:
+
+typedef struct {
+    char nombre[20];
+    char tipo[20];
+    struct items * sig;
+} items;
+
+Se solucionaron diversos errores en las funciones de kokemones.c y pokedex.c, en el proceso se modificaron parámetros y retornos de varias funciones.
+Quedando asi las definiciones de las funciones de kokemonex.h y pokedex.h:
+
+Funciones kokemones.h:
+- void mostrarEquipo(pokemonEnEquipo *);
+- void mostrarPokemon(stats);
+- void cargarArchivoEquipo(pokemonEnEquipo *);
+- void mostrarPokemonEquipo(char aMostrar[20], pokemonEnEquipo * equipo);
+- pokemonEnEquipo * inicListaEquipo();
+- pokemonEnEquipo * crearNodoEquipo(stats);
+- pokemonEnEquipo * leerArchivoEquipo(pokemonEnEquipo *);
+- pokemonEnEquipo * agregarPpioEquipo(pokemonEnEquipo *, pokemonEnEquipo *);
+- pokemonEnEquipo * cargarEquipo(pokemonEnEquipo *);
+- pokemonEnEquipo * modificarPokemones(pokemonEnEquipo * lista);
+- pokemonEnEquipo * modificarPokemon(pokemonEnEquipo * lista, char aModificar[20]);
+- pokemonEnEquipo * modificarStat(pokemonEnEquipo * );
+- pokemonEnEquipo * borrarPokemon(char *, pokemonEnEquipo * );
+- stats cargarPokemon();
+
+Funciones pokedex.h:
+- pokedex * modificarPokemonEnPokedex(char *, pokedex * );
+- pokedex * insertarNodoPokedex(pokedex *, pokemon);
+- pokedex * inicPokedex();
+- pokedex * crearNodoPokedex();
+- int buscarEnPokedex(int, pokedex *);
+- pokedex * leerPokedex(pokedex * );
+- void cargarArchivoPokedex(pokedex * );
+- int leerYpasarAArreglo(pokedex * , pokemon *, int );
+- pokemon cargarPokemonPokedex();
+
+
+
 
 
 
