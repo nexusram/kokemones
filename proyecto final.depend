@@ -7,14 +7,15 @@
 	"pokedex.h"
 	"mochila.h"
 
-1605305818 source:c:\users\emanu\desktop\proyecto final\kokemones\mochila.c
+1605671412 source:c:\users\emanu\desktop\proyecto final\kokemones\mochila.c
 	"mochila.h"
 	<stdlib.h>
 	<stdio.h>
+	<string.h>
 
-1605471259 c:\users\emanu\desktop\proyecto final\kokemones\mochila.h
+1605646857 c:\users\emanu\desktop\proyecto final\kokemones\mochila.h
 
-1605563066 source:c:\users\emanu\desktop\proyecto final\kokemones\pokedex.c
+1605564227 source:c:\users\emanu\desktop\proyecto final\kokemones\pokedex.c
 	"pokedex.h"
 	<stdlib.h>
 	<stdio.h>
@@ -26,7 +27,7 @@
 	"pokedex.h"
 	"mochila.h"
 
-1605561643 source:c:\users\emanu\desktop\proyecto final\kokemones\kokemones.c
+1605564200 source:c:\users\emanu\desktop\proyecto final\kokemones\kokemones.c
 	"kokemones.h"
 	"pokedex.h"
 	<stdlib.h>

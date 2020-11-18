@@ -71,7 +71,7 @@ int main()
         case 4:
             cargarArchivoEquipo(equipo);
             cargarArchivoPokedex(arbolPokedex);
-            //cargarMochila(mochilita);
+            cargarArchivoMochila(mochilita);
             printf("\nGuardando cambios ");
             for(int i = 0; i < 3; i++)
             {
