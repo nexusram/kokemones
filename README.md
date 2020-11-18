@@ -2,7 +2,6 @@
 
 # Integrantes:
 - Emanuel Cacheda
-- Federico Lanci
 - Mariela Valentini
 
 # Work Daily
