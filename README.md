@@ -150,21 +150,30 @@ Funciones pokedex.h:
 Se crearon las siguientes funciones:
 void inicMochila(mochila *);
 
-items * inicListaItems();
+-items * inicListaItems();
 
-items * CrearNodoItem (char nombre[20],char tipo[20]);
+-items * CrearNodoItem (char nombre[20],char tipo[20]);
 
-int BuscaPosCategoria (mochila adl[3],char tipo [], int validos);
+-int BuscaPosCategoria (mochila adl[3],char tipo [], int validos);
 
-int AgregarCategoria (mochila adl[3], char tipo [], int validos);
-items * AgregarAlPpio (items * lista, items * NuevoNodo);
-void AgregarItem (mochila adl[]);
-void MostrarListaItems (items * lista);
-void MostrarMochila (mochila adl[]);
-void MostarUnaCategoria (mochila adl [],int i);
-void cargarArchivoMochila(mochila adl []);
-void leerArchivoMochila(mochila adl[]);
-void borrarItem(char nombre[20], mochila adl[]);
+-int AgregarCategoria (mochila adl[3], char tipo [], int validos);
+
+-items * AgregarAlPpio (items * lista, items * NuevoNodo);
+
+-void AgregarItem (mochila adl[]);
+
+-void MostrarListaItems (items * lista);
+
+-void MostrarMochila (mochila adl[]);
+
+-void MostarUnaCategoria (mochila adl [],int i);
+
+-void cargarArchivoMochila(mochila adl []);
+
+-void leerArchivoMochila(mochila adl[]);
+
+-void borrarItem(char nombre[20], mochila adl[]);
+
 Se soluciono un problema en la carga de las listas, nos faltaba llamar a la función agregarAlPpio.
 Se probaron las funciones y se subió el código final a GitHub.
 Finalización del diario de trabajo, 
