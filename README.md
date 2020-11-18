@@ -146,9 +146,9 @@ Funciones pokedex.h:
 
 # 17/11
 
-Se crearon las siguientes funciones:
-- void inicMochila(mochila *);
+Se crearon las siguientes funciones en mochila.c:
 
+- void inicMochila(mochila *);
 - items * inicListaItems();
 - items * CrearNodoItem (char nombre[20],char tipo[20]);
 - int BuscaPosCategoria (mochila adl[3],char tipo [], int validos);
@@ -162,7 +162,7 @@ Se crearon las siguientes funciones:
 - void leerArchivoMochila(mochila adl[]);
 - void borrarItem(char nombre[20], mochila adl[]);
 
-Se soluciono un problema en la carga de las listas, nos faltaba llamar a la función agregarAlPpio.
+Se solucionó un problema en la carga de las listas, nos faltaba llamar a la función agregarAlPpio.
 
 Se probaron las funciones y se subió el código final a GitHub.
 
