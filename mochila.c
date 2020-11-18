@@ -184,9 +184,9 @@ void MostarUnaCategoria (mochila adl [],int i)
 {
     if (adl[i].lista != NULL)
     {
-        printf("\n---La lista de %s----\n",adl[i].tipo);
+        printf("\n---Inicio de la lista de %s----\n",adl[i].tipo);
         MostrarListaItems(adl[i].lista);
-        printf("\n\n---Fin de la lista de items---\n");
+        printf("\n\n---Fin de la lista de %s---\n",adl[i].tipo);
     }
     else
     {
