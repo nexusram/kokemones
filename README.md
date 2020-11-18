@@ -149,9 +149,13 @@ Funciones pokedex.h:
 
 Se crearon las siguientes funciones:
 void inicMochila(mochila *);
+
 items * inicListaItems();
+
 items * CrearNodoItem (char nombre[20],char tipo[20]);
+
 int BuscaPosCategoria (mochila adl[3],char tipo [], int validos);
+
 int AgregarCategoria (mochila adl[3], char tipo [], int validos);
 items * AgregarAlPpio (items * lista, items * NuevoNodo);
 void AgregarItem (mochila adl[]);
