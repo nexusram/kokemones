@@ -145,45 +145,36 @@ Funciones pokedex.h:
 - int leerYpasarAArreglo(pokedex * , pokemon *, int );
 - pokemon cargarPokemonPokedex();
 
-#17/11
+# 17/11
 
 Se crearon las siguientes funciones:
-void inicMochila(mochila *);
+- void inicMochila(mochila *);
 
--items * inicListaItems();
-
--items * CrearNodoItem (char nombre[20],char tipo[20]);
-
--int BuscaPosCategoria (mochila adl[3],char tipo [], int validos);
-
--int AgregarCategoria (mochila adl[3], char tipo [], int validos);
-
--items * AgregarAlPpio (items * lista, items * NuevoNodo);
-
--void AgregarItem (mochila adl[]);
-
--void MostrarListaItems (items * lista);
-
--void MostrarMochila (mochila adl[]);
-
--void MostarUnaCategoria (mochila adl [],int i);
-
--void cargarArchivoMochila(mochila adl []);
-
--void leerArchivoMochila(mochila adl[]);
-
--void borrarItem(char nombre[20], mochila adl[]);
+- items * inicListaItems();
+- items * CrearNodoItem (char nombre[20],char tipo[20]);
+- int BuscaPosCategoria (mochila adl[3],char tipo [], int validos);
+- int AgregarCategoria (mochila adl[3], char tipo [], int validos);
+- items * AgregarAlPpio (items * lista, items * NuevoNodo);
+- void AgregarItem (mochila adl[]);
+- void MostrarListaItems (items * lista);
+- void MostrarMochila (mochila adl[]);
+- void MostarUnaCategoria (mochila adl [],int i);
+- void cargarArchivoMochila(mochila adl []);
+- void leerArchivoMochila(mochila adl[]);
+- void borrarItem(char nombre[20], mochila adl[]);
 
 Se soluciono un problema en la carga de las listas, nos faltaba llamar a la función agregarAlPpio.
+
 Se probaron las funciones y se subió el código final a GitHub.
+
 Finalización del diario de trabajo, 
 Confección final de la matriz de problemas / soluciones.
 Confección del manual de usuario.
  
-Distribución final de tareas:
-Estructuras pokemonEnEquipo y pokedex: Emanuel Cacheda;
-Estructura Mochila y diario de trabajo: realización en equipo Emanuel Cacheda y Mariela Valentini;
-Manual de usuario, matriz de problemas/soluciones, confección de detalle de estructuras y funciones y trello: Mariela Valentini.
+# Distribución final de tareas:
+- Estructuras pokemonEnEquipo y pokedex: Emanuel Cacheda;
+- Estructura Mochila y diario de trabajo: realización en equipo Emanuel Cacheda y Mariela Valentini;
+- Manual de usuario, matriz de problemas/soluciones, confección de detalle de estructuras y funciones y trello: Mariela Valentini.
 
 
 
