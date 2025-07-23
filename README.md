@@ -3,6 +3,7 @@
 # Integrantes:
 - Emanuel Cacheda
 - Mariela Valentini
+- Nahuel Suarez
 
 # Work Daily
 
